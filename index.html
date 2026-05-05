@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efe Pehlivan | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6d60a986f9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="nav">
+        <div class="container">
+            <div class="sol logo-area">
+                <a href="#" id="lodexi-text">EFE PEHLİVAN</a>
+            </div>
+            <div class="sag">
+                <ul class="fmenu">
+                    <li><a href="#projeler">Projeler</a></li>
+                    <li><a href="#hakkimda">Hakkımda</a></li>
+                    <li class="contact-btn"><a href="#iletisim">İletişim <i class="fas fa-paper-plane"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="omenu-id" class="omenu">
+        <a id="menu-toggle" href="javascript:void(0)"><i id="bars" class="fas fa-bars fa-2x"></i></a>
+        <ul class="smenu" id="mobile-menu">
+            <li><a href="#projeler">Projeler</a></li>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="svg-container">
+            <!-- Dinamik ve Modern SVG Detayı -->
+            <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4285F4;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#9b51e0;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle class="animated-circle" cx="400" cy="300" r="150" fill="none" stroke="url(#grad1)" stroke-width="4" stroke-dasharray="1000" />
+                <path class="animated-path" d="M300 300 L500 300 M400 200 L400 400" stroke="white" stroke-width="2" opacity="0.5" />
+                <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="40" font-family="Montserrat" dy=".3em">EP</text>
+            </svg>
+        </div>
+
+        <div class="mouse-scroll" onclick="scrollToMain()">
+            <div class="mouse"></div>
+        </div>
+
+        <div class="header-overlay left-top"></div>
+        <div class="header-overlay right-top"></div>
+        <div class="header-overlay left-bottom"></div>
+        <div class="header-overlay right-bottom"></div>
+    </header>
+
+    <main id="projeler">
+        <div class="container">
+            <h2 class="section-title">Öne Çıkan Projeler</h2>
+            <section id="sec0">
+                <ul>
+                    <li class="col">
+                        <div class="colimg project-1"></div>
+                        <div class="overlay-gradient blue"></div>
+                        <div class="col-content">
+                            <h3>DoYaDi</h3>
+                            <p>Mobil ivmeölçer ile PC yarış oyunları için hassas direksiyon kontrolü.</p>
+                            <div class="view-btn">
+                                <a href="#">DETAYLAR <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col">
+                        <div class="colimg project-2"></div>
+                        <div class="overlay-gradient purple"></div>
+                        <div class="col-content">
+                            <h3>ZihNot</h3>
+                            <p>Flutter ile geliştirilmiş, minimalist ve akıllı not alma asistanı.</p>
+                            <div class="view-btn">
+                                <a href="#">DETAYLAR <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col">
+                        <div class="colimg project-3"></div>
+                        <div class="overlay-gradient dark"></div>
+                        <div class="col-content">
+                            <h3>Yetenekler</h3>
+                            <p>C#, Python, Java ve Veri Bilimi alanında profesyonel çözümler.</p>
+                            <div class="view-btn">
+                                <a href="#">TÜMÜ <i class="fas fa-code"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="hakkimda" class="about-section">
+                <div class="about-card">
+                    <h2>Hakkımda</h2>
+                    <p>İstanbul Ticaret Odası'ndan Full-Stack Web Geliştirme Ustalık Belgesi'ne sahip, üniversite eğitiminde Java ve Python dillerinde ileri seviyeye ulaşmış bir yazılım geliştiricisiyim. Modern teknolojileri (Flutter, LLM, MLOps) projelerime entegre etmeyi ve donanım-yazılım haberleşmesi üzerine yenilikçi ürünler geliştirmeyi seviyorum.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="iletisim">
+        <div class="container">
+            <div class="footer-header">
+                <h3>BAĞLANTIDA KALALIM</h3>
+                <div class="divider"></div>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fas fa-envelope fa-2x"></i></a>
+            </div>
+            <p class="copyright">&copy; 2026 Efe Pehlivan. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
