@@ -6,130 +6,157 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efe Pehlivan | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-v2.css">
     <script src="https://kit.fontawesome.com/6d60a986f9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg_svg">
 
     <nav id="nav">
         <div class="container">
-            <div class="sol logo-area">
-                <a href="#" id="lodexi-text">Navilastro</a>
+            <div class="logo-area">
+                <a href="#" id="ep-logo">Navilastro</a>
             </div>
-            <div class="sag">
-                <ul class="fmenu">
-                    <li><a href="#projeler">Projeler</a></li>
-                    <li><a href="#hakkimda">Hakkımda</a></li>
-                    <li class="contact-btn"><a href="#iletisim">İletişim <i class="fas fa-paper-plane"></i></a></li>
-                </ul>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#projeler">Projeler</a></li>
+                <li><a href="#hakkimda">Hakkımda</a></li>
+                <li class="contact-pill"><a href="#iletisim">İletişim</a></li>
+            </ul>
         </div>
     </nav>
 
-    <div id="omenu-id" class="omenu">
-        <a id="menu-toggle" href="javascript:void(0)"><i id="bars" class="fas fa-bars fa-2x"></i></a>
-        <ul class="smenu" id="mobile-menu">
-            <li><a href="#projeler">Projeler</a></li>
-            <li><a href="#hakkimda">Hakkımda</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
-        </ul>
-    </div>
-
     <header>
-        <div class="svg-container">
-            <!-- Dinamik ve Modern SVG Detayı -->
-            <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+        <div class="hero-visual">
+            <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#4285F4;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#9b51e0;stop-opacity:1" />
+                    <linearGradient id="blueGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#3a7bd5;stop-opacity:1" />
                     </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
                 </defs>
-                <circle class="animated-circle" cx="400" cy="300" r="150" fill="none" stroke="url(#grad1)" stroke-width="4" stroke-dasharray="1000" />
-                <path class="animated-path" d="M300 300 L500 300 M400 200 L400 400" stroke="white" stroke-width="2" opacity="0.5" />
-                <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="40" font-family="Montserrat" dy=".3em">EFE PEHLİVAN</text>
+                <!-- Animated Rings -->
+                <circle class="ring ring-1" cx="400" cy="400" r="180" fill="none" stroke="url(#blueGreenGrad)" stroke-width="2" stroke-dasharray="10, 20" />
+                <circle class="ring ring-2" cx="400" cy="400" r="150" fill="none" stroke="#40E0D0" stroke-width="1" opacity="0.3" />
+                
+                <!-- Centered EP Text -->
+                <g filter="url(#glow)">
+                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="80" font-family="Montserrat" font-weight="700">EFE PEHLİVAN</text>
+                </g>
             </svg>
         </div>
 
-        <div class="mouse-scroll" onclick="scrollToMain()">
-            <div class="mouse"></div>
+        <div class="scroll-indicator" onclick="scrollToContent()">
+            <span>KAYDIR</span>
+            <div class="mouse-icon">
+                <div class="wheel"></div>
+            </div>
         </div>
-
-        <div class="header-overlay left-top"></div>
-        <div class="header-overlay right-top"></div>
-        <div class="header-overlay left-bottom"></div>
-        <div class="header-overlay right-bottom"></div>
     </header>
 
-    <main id="projeler">
-        <div class="container">
-            <h2 class="section-title">Öne Çıkan Projeler</h2>
-            <section id="sec0">
-                <ul>
-                    <li class="col">
-                        <div class="colimg project-1"></div>
-                        <div class="overlay-gradient blue"></div>
-                        <div class="col-content">
-                            <h3>DoYaDi</h3>
-                            <p>Mobil ivmeölçer ile PC yarış oyunları için hassas direksiyon kontrolü.</p>
-                            <div class="view-btn">
-                                <a href="#">DETAYLAR <i class="fas fa-arrow-right"></i></a>
-                            </div>
+    <main class="container">
+        <section id="projeler" class="section">
+            <div class="section-header">
+                <span class="subtitle">ÇALIŞMALARIM</span>
+                <h2 class="title">Öne Çıkan Projeler</h2>
+            </div>
+            
+            <div class="project-grid">
+                <!-- Proje 1 -->
+                <article class="project-card">
+                    <div class="card-img p1-bg"></div>
+                    <div class="card-content">
+                        <h3>DoYaDi</h3>
+                        <p>Mobil ivmeölçer verilerini normalize ederek PC oyunları için düşük gecikmeli direksiyon kontrolü sağlar.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Socket</span>
+                            <span>Sensör</span>
                         </div>
-                    </li>
-                    <li class="col">
-                        <div class="colimg project-2"></div>
-                        <div class="overlay-gradient purple"></div>
-                        <div class="col-content">
-                            <h3>ZihNot</h3>
-                            <p>Flutter ile geliştirilmiş, minimalist ve akıllı not alma asistanı.</p>
-                            <div class="view-btn">
-                                <a href="#">DETAYLAR <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col">
-                        <div class="colimg project-3"></div>
-                        <div class="overlay-gradient dark"></div>
-                        <div class="col-content">
-                            <h3>Yetenekler</h3>
-                            <p>C#, Python, Java ve Veri Bilimi alanında profesyonel çözümler.</p>
-                            <div class="view-btn">
-                                <a href="#">TÜMÜ <i class="fas fa-code"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </section>
+                        <a href="#" class="btn-text">İncele <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
 
-            <section id="hakkimda" class="about-section">
-                <div class="about-card">
-                    <h2>Hakkımda</h2>
-                    <p>İstanbul Ticaret Odası'ndan Full-Stack Web Geliştirme Ustalık Belgesi'ne sahip, üniversite eğitiminde Java ve Python dillerinde ileri seviyeye ulaşmış bir yazılım geliştiricisiyim. Modern teknolojileri (Flutter, LLM, MLOps) projelerime entegre etmeyi ve donanım-yazılım haberleşmesi üzerine yenilikçi ürünler geliştirmeyi seviyorum.</p>
+                <!-- Proje 2 -->
+                <article class="project-card">
+                    <div class="card-img p2-bg"></div>
+                    <div class="card-content">
+                        <h3>ZihNot</h3>
+                        <p>Flutter framework'ü ile geliştirilen, yüksek performanslı ve modern arayüzlü not asistanı.</p>
+                        <div class="tags">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="#" class="btn-text">İncele <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Proje 3 -->
+                <article class="project-card">
+                    <div class="card-img p3-bg"></div>
+                    <div class="card-content">
+                        <h3>Veri Bilimi & Makine Öğrenmesi</h3>
+                        <p>Miuul eğitimleri kapsamında geliştirilen makine öğrenmesi ve veritabanı yönetim modelleri.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>ML</span>
+                            <span>SQL</span>
+                        </div>
+                        <a href="#" class="btn-text">İncele <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="hakkimda" class="section about">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="subtitle">HİKAYEM</span>
+                    <h2 class="title">Teknolojiye Tutkulu Bir Geliştirici</h2>
+                    <p>İstanbul Ticaret Odası Mesleki ve Teknik Anadolu Lisesinden <strong>Bilişim Teknolojileri</strong> alanında ustalık belgesi aldım. Biruni Üniversitesinde Bilgisayar Mühendisliği okuyorum.</p>
+                    <p>Şu an yerel dil modelleri (LLM), veri mühendisliği, donanım-yazılım entegrasyonu üzerine odaklanıyorum.</p>
                 </div>
-            </section>
-        </div>
+                <div class="skills-grid">
+                    <div class="skill-tag">C# / .NET</div>
+                    <div class="skill-tag">Java</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">SQL</div>
+                    <div class="skill-tag">Full-Stack Web Developer</div>
+                    <div class="skill-tag">Data Science</div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="iletisim">
         <div class="container">
-            <div class="footer-header">
-                <h3>BAĞLANTIDA KALALIM</h3>
-                <div class="divider"></div>
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>EFE PEHLİVAN</h3>
+                    <p>Yazılım Geliştirici & Mühendislik Öğrencisi</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/efe-pehlivan-529662247/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Navilastro"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/efe.svg?igsh=bTNqbGV5enRmanFp"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:efepehlivan919@gmail.com"><i class="far fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/efe-pehlivan-529662247/"><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="https://github.com/Navilastro"><i class="fab fa-github fa-2x"></i></a>
-                <a href="https://www.instagram.com/efe.svg?igsh=bTNqbGV5enRmanFp"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="#"><i class="fas fa-envelope fa-2x"></i></a>
+            <div class="bottom-bar">
+                <p>&copy; 2026 | Efe Pehlivan. Tüm hakları saklıdır.</p>
             </div>
-            <p class="copyright">&copy; 2026 Efe Pehlivan. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script-v2.js"></script>
 </body>
 </html>
